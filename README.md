@@ -10,7 +10,7 @@
 
 ## 下載
 
-請下載最新版套件，找 `AT_permit_full_x64.zip` 那個連結，這是對應目前大多數使用者 x64 架構作業系統的整合版本；如果想要自己手動下載第三方工具，例如要用於不同架構的作業系統，也可以用 `AT_permit.zip` 連結。
+請下載[最新版套件](https://github.com/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator/releases/latest)，找 `AT_permit_full_x64.zip` 那個連結，這是對應目前大多數使用者 x64 架構作業系統的整合版本；如果想要自己手動下載第三方工具，例如要用於不同架構的作業系統，也可以用 `AT_permit.zip` 連結。
 
 使用前記得要解壓縮。
 
