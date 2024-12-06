@@ -51,7 +51,7 @@ table tbody tr:nth-child(2n+1) td {
       <p>台灣社政輔具常見醫療器材許可證字號資料表產生器</p>
       <dl>
         <dt>目前使用的資料表產生器版本</dt>
-        <dd>v2024.12.06</dd>
+        <dd>v2024.12.06.1</dd>
         <dt>下載最新版套件</dt>
         <dd><a href="https://github.com/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator/releases/latest">https://github.com/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator/releases/latest</a></dd>
         <dt>意見回饋／瑕疵回報</dt>
