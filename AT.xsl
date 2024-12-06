@@ -4,8 +4,9 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:date="http://exslt.org/dates-and-times"
   extension-element-prefixes="date">
+  <xsl:output method="html" encoding="utf-8" indent="yes" />
   <xsl:template match="/">
-    <xsl:text disable-output-escaping="yes">&lt;&#33;</xsl:text> DOCTYPE html<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+    <xsl:text disable-output-escaping="yes">&lt;&#33;</xsl:text>DOCTYPE html<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
     <html lang="zh-Hant-TW">
     <head>
       <title>社政輔具常用醫療器材許可證字號資料表</title>
