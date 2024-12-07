@@ -187,7 +187,7 @@ section#link {
       <table id="dataTable">
       	<caption>製表日期：<xsl:value-of select="date:year()"/> 年 <xsl:value-of select="date:month-in-year()"/> 月 <xsl:value-of select="date:day-in-month()"/> 日</caption>
       	<thead>
-      	  <tr><th>許可證字號<br/><label for="permitInput">快查：</label><input type="text" id="permitInput" onkeyup="filterFunction()" placeholder="可只輸入數字部分" title="可只輸入數字部分" aria-description="可只輸入許可證字號的數字部分"/></th><th>註銷狀態</th><th>有效日期</th><th>品名</th><th>醫器類別、級數、規格<br/><label for="categoryInput">快查：</label><input type="text" id="categoryInput" onkeyup="filterFunction()" placeholder="輸入醫器類別代碼" title="輸入醫器類別代碼" aria-description="輸入醫器類別代碼"/></th><th>申請商</th><th>製造商</th></tr>
+      	  <tr><th>許可證字號<br/><label for="permitInput">快查：</label><input type="text" id="permitInput" onkeyup="filterFunction()" placeholder="可只輸入數字部分" title="可只輸入數字部分" aria-description="可只輸入許可證字號的數字部分"/></th><th>註銷狀態</th><th>有效日期</th><th>品名<br/><label for="categoryInput">快查：</label><input type="text" id="brandInput" onkeyup="filterFunction()" placeholder="輸入廠牌或品名" title="輸入廠牌或品名" aria-description="輸入輔具的廠牌或品名（建議輸入英文）"/></th><th>醫器類別、級數、規格<br/><label for="categoryInput">快查：</label><input type="text" id="categoryInput" onkeyup="filterFunction()" placeholder="輸入醫器類別代碼" title="輸入醫器類別代碼" aria-description="輸入醫器類別代碼"/></th><th>申請商</th><th>製造商</th></tr>
       	</thead>
       	<tbody>
             <xsl:for-each select="dataList">
@@ -214,7 +214,7 @@ section#link {
           <h2>台灣社政輔具常見醫療器材許可證字號資料表產生器</h2>
           <dl>
             <dt>目前使用的資料表產生器版本</dt>
-            <dd>v2024.12.07</dd>
+            <dd>v2024.12.07.1</dd>
           </dl>
           <ul>
             <li><a href="https://github.com/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator/releases/latest">下載最新版套件</a></li>
@@ -237,22 +237,26 @@ section#link {
     <script>
 function filterFunction() {
   // Declare variables
-  var input1, input2, filter1, filter2, table, tr, td1, td5, i, txtValue;
+  var input1, input2, input3, filter1, filter2, filter3, table, tr, td1, td4, td5, i, txtValue;
   input1 = document.getElementById("permitInput");
-  input2 = document.getElementById("categoryInput");
+  input2 = document.getElementById("brandInput");
+  input3 = document.getElementById("categoryInput");
   filter1 = input1.value.toUpperCase();
   filter2 = input2.value.toUpperCase();
+  filter3 = input3.value.toUpperCase();
   table = document.getElementById("dataTable");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i <xsl:text disable-output-escaping="yes">&lt;</xsl:text> tr.length; i++) {
     td1 = tr[i].getElementsByTagName("td")[0];
+    td4 = tr[i].getElementsByTagName("td")[3];
     td5 = tr[i].getElementsByTagName("td")[4];
-    if (td1 || td5) {
+    if (td1 || td4 || td5) {
       txtValue1 = td1.textContent || td1.innerText;
-      txtValue2 = td5.textContent || td5.innerText;
-      if (txtValue1.toUpperCase().indexOf(filter1) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1 <xsl:text disable-output-escaping="yes">&amp;&amp;</xsl:text> txtValue2.toUpperCase().indexOf(filter2) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1) {
+      txtValue2 = td4.textContent || td4.innerText;
+      txtValue3 = td5.textContent || td5.innerText;
+      if (txtValue1.toUpperCase().indexOf(filter1) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1 <xsl:text disable-output-escaping="yes">&amp;&amp;</xsl:text> txtValue2.toUpperCase().indexOf(filter2) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1 <xsl:text disable-output-escaping="yes">&amp;&amp;</xsl:text> txtValue3.toUpperCase().indexOf(filter3) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
