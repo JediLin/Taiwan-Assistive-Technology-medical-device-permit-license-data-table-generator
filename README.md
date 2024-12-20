@@ -6,7 +6,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator?style=for-the-badge)
 
-台灣衛生福利部食品藥物管理署在政府資料開放平台上，每七天自動發布更新醫療器材許可證資料集。我寫了一小段批次檔，用來自動下載 XML 格式的最新版本資料集，並且利用 [XSL Transformations (XSLT)](https://www.w3.org/TR/xslt/) 技術，從中擷取屬於社政輔具常見的那些醫療器材次類別（詳見[底下清單](#社政輔具常見醫療器材次類別)），以便查詢檢索。
+台灣衛生福利部食品藥物管理署（食藥署）在政府資料開放平台上，每七天自動發布更新醫療器材許可證資料集。我寫了一小段批次檔，用來自動下載 XML 格式的最新版本資料集，並且利用 [XSL Transformations (XSLT)](https://www.w3.org/TR/xslt/) 技術，從中擷取屬於社政輔具常見的那些醫療器材次類別（詳見[底下清單](#社政輔具常見醫療器材次類別)），以便查詢檢索。
 
 註：如果只需要**助聽器**部分的醫材許可證資料，可以改用[台灣助聽器醫療器材許可證字號資料表產生器](https://github.com/JediLin/Taiwan-Hearing-Aids-permit-license-data-table-generator)，產製檔案較小的資料表。
 
@@ -96,7 +96,7 @@
 - O.5180 手動式病人翻身床
 - O.5225 動力式病人翻身床
 
-註：整理過程中我發現有少數醫療器材許可資料缺少次類別，這是屬於食藥署的管理問題，在此不做處理；因為這樣的原因，如果遇到這種情況，建議還是要回到食藥署的[醫療器材許可證資訊網站](https://lmspiq.fda.gov.tw/web/MDPIQ/MDPIQLicSearch)查詢確認為宜。
+註：整理過程中我發現有少數醫療器材許可資料缺少次類別，這是屬於食藥署的管理問題，在此不做處理；因為這樣的原因，如果遇到這種情況，建議還是要回到食藥署的[醫療器材許可證查詢網站](https://lmspiq.fda.gov.tw/web/MDPIQ/MDPIQLicSearch)或食藥署委託工業技術研究院（工研院）建置的[醫療器材許可證資料庫網站](https://mdlicense.itri.org.tw/MDDB/Classification/ClassDB.aspx)查詢確認為宜。
 
 ## 版本沿革
 ### v2024.12.07.1
