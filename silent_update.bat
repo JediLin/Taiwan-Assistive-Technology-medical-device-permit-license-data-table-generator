@@ -1,6 +1,8 @@
 @echo off
 :start
+cd %~dp0
 echo Start at %date% %time% > silent_update.log
+echo Working from %~dp0 >> silent_update.log
 
 IF NOT EXIST "AT.xsl" (
   echo %time% No AT.xsl available >> silent_update.log
