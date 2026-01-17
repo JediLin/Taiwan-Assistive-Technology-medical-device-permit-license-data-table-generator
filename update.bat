@@ -128,12 +128,11 @@ IF %colorSupport%==Yes (
   echo ●●●○[3/4] 正在轉換產製資料表，這個步驟耗時約一分鐘，請耐心等候……
 )
 echo:
-xml.exe tr AT.xsl 68_1.xml > AT.html
+xml.exe -q fo --recover 68_1.xml > 68_1_format.xml
+xml.exe tr AT.xsl 68_1_format.xml > AT.html
 
 IF EXIST "AT.html" (
-  del /F /Q 68_1.xml
-  del /F /Q 68_1.xml.zip
-  GOTO end
+  GOTO cont2
 ) ELSE (
   echo:
   IF %colorSupport%==Yes (
@@ -145,7 +144,31 @@ IF EXIST "AT.html" (
   GOTO cont
 )
 
+:cont2
+IF %@FILESIZE["AT.html"] == 0 (
+  IF %colorSupport%==Yes (
+    echo [33m❎[0m  原始資料檔案格式錯誤，無法轉換產製資料表，請按任意鍵結束……
+  ) ELSE (
+    echo 原始資料檔案格式錯誤，無法轉換產製資料表，請按任意鍵結束……
+  )
+  del /F /Q 68_1_format.xml
+  del /F /Q 68_1.xml
+  del /F /Q 68_1.xml.zip
+  del /F /Q AT.html > nul 2>&1
+  IF EXIST "AT.bak.html" (
+    copy /Y AT.bak.html AT.html > nul
+    del /F /Q AT.bak.html > nul 2>&1
+  )
+  pause > nul
+  exit
+) ELSE (
+  GOTO end
+)
+
 :end
+del /F /Q 68_1_format.xml
+del /F /Q 68_1.xml
+del /F /Q 68_1.xml.zip
 del /F /Q *.
 cls
 IF %colorSupport%==Yes (

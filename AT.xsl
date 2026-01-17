@@ -214,7 +214,7 @@ section#link {
           <h2>台灣社政輔具常見醫療器材許可證字號資料表產生器</h2>
           <dl>
             <dt>目前使用的資料表產生器版本</dt>
-            <dd>v2024.12.23</dd>
+            <dd>v2026.01.17</dd>
           </dl>
           <ul>
             <li><a href="https://github.com/JediLin/Taiwan-Assistive-Technology-medical-device-permit-license-data-table-generator/releases/latest">下載最新版套件</a></li>
