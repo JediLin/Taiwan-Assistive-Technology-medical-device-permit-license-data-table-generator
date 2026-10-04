@@ -205,11 +205,11 @@ section#link {
     <body>
       <h1>醫療器材許可證字號暨相關資訊</h1>
       <table id="dataTable">
-      	<caption>製表日期：<xsl:value-of select="date:year()"/> 年 <xsl:value-of select="date:month-in-year()"/> 月 <xsl:value-of select="date:day-in-month()"/> 日</caption>
-      	<thead>
-      	  <tr><th>許可證字號<br/><label for="permitInput">快查：</label><input type="text" id="permitInput" onkeyup="filterFunction()" placeholder="可只輸入數字部分" title="可只輸入數字部分" aria-description="可只輸入許可證字號的數字部分"/></th><th>註銷狀態</th><th>有效日期</th><th>品名<br/><label for="categoryInput">快查：</label><input type="text" id="brandInput" onkeyup="filterFunction()" placeholder="輸入廠牌或品名" title="輸入廠牌或品名" aria-description="輸入輔具的廠牌或品名（建議輸入英文）"/></th><th>醫器類別、級數、規格<br/><label for="categoryInput">快查：</label><input type="text" id="categoryInput" onkeyup="filterFunction()" placeholder="輸入醫器類別代碼" title="輸入醫器類別代碼" aria-description="輸入醫器類別代碼"/></th><th>申請商</th><th>製造商<br/><label for="countryInput">國別快查：</label><input type="text" id="countryInput" onkeyup="filterFunction()" placeholder="輸入製造廠國家代碼" title="輸入製造廠國家代碼" aria-description="輸入製造廠國家代碼"/></th></tr>
-      	</thead>
-      	<tbody>
+        <caption>製表日期：<xsl:value-of select="date:year()"/> 年 <xsl:value-of select="date:month-in-year()"/> 月 <xsl:value-of select="date:day-in-month()"/> 日</caption>
+        <thead>
+          <tr><th>許可證字號<br/><label for="permitInput">快查：</label><input type="text" id="permitInput" onkeyup="filterFunction()" placeholder="可只輸入數字部分" title="可只輸入數字部分" aria-description="可只輸入許可證字號的數字部分"/></th><th>註銷狀態</th><th>有效日期</th><th>品名<br/><label for="categoryInput">快查：</label><input type="text" id="brandInput" onkeyup="filterFunction()" placeholder="輸入廠牌或品名" title="輸入廠牌或品名" aria-description="輸入輔具的廠牌或品名（建議輸入英文）"/></th><th>醫器類別、級數、規格<br/><label for="categoryInput">快查：</label><input type="text" id="categoryInput" onkeyup="filterFunction()" placeholder="輸入醫器類別代碼" title="輸入醫器類別代碼" aria-description="輸入醫器類別代碼"/></th><th>申請商</th><th>製造商<br/><label for="countryInput">國別快查：</label><input type="text" id="countryInput" onkeyup="filterFunction()" placeholder="輸入製造廠國家代碼" title="輸入製造廠國家代碼" aria-description="輸入製造廠國家代碼"/></th></tr>
+        </thead>
+        <tbody>
             <xsl:for-each select="dataList">
               <xsl:for-each select="rows">
                 <tr>
